@@ -1,0 +1,21 @@
+<ng-container *ngIf="isLoading; else chartContent">
+  <!-- Display a loading indicator -->
+  <div>Loading...</div>
+</ng-container>
+
+<ng-template #chartContent>
+  <!-- Chart component content -->
+  <div *ngIf="chartData">
+    <canvas  baseChart
+             [datasets]="chartData.datasets"
+             [labels]="chartData.labels"
+             [options]="chartOptions"
+             [legend]="chartLegend"
+             [type]="chartType">
+    </canvas>
+  </div>
+
+</ng-template>
+
+
+
